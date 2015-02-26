@@ -13,12 +13,12 @@ function Start () {
 function Update () {
 	if(Input.GetKey( KeyCode.RightArrow))
 	{
-		posx = posx+0.2;
+		posx = posx+0.3;
 	}
 	
 	if(Input.GetKey(KeyCode.LeftArrow))
 	{
-		posx = posx-0.2;
+		posx = posx-0.3;
 	}
 	
 	if(Input.GetKeyDown(KeyCode.Space))
