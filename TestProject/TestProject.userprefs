@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/chara.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/Title.js">
     <Files>
-      <File FileName="Assets/script/chara.js" Line="13" Column="21" />
+      <File FileName="Assets/script/move1.js" Line="10" Column="3" />
+      <File FileName="Assets/script/chara.js" Line="41" Column="3" />
+      <File FileName="Assets/script/Title.js" Line="5" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
