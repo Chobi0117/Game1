@@ -3,10 +3,14 @@
 var posx : float;
 var posy : float;
 
+var  JumpCount : int;
+
 function Start () {
 
 	posx = -50;
 	posy = 0;
+	
+	JumpCount = 0;
 
 }
 function FixedUpdate () {
@@ -24,14 +28,15 @@ function FixedUpdate () {
 		//rigidbody2D.AddForce(Vector2(-100,0));
 		rigidbody2D.velocity.x = -5;
 	}
-	
-	if(Input.GetKeyDown(KeyCode.Space))
+	if(JumpCount == 0){
+		if(Input.GetKeyDown(KeyCode.Space))
 	{
 		rigidbody2D.velocity.y = 0;
 		rigidbody2D.AddForce(Vector2(0,1000));
+		JumpCount = 1;
+		}
 	}
-//	transform.position.x = posx;
-//	transform.position.y += posy;
+
 	posy = 0;
 	if(transform.position.x > 20)
 	{
@@ -50,4 +55,9 @@ function OnCollisionEnter2D(coll: Collision2D) {
 		Application.LoadLevel("GameOver");
 	}
  	Debug.Log("hit Object  COLLISION");
+ 	
+ 	if(coll.gameObject.layer == 10)
+	{
+		JumpCount = 0;
+	}
 }
