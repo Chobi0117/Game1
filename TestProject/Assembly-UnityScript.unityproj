@@ -49,8 +49,11 @@
      <Compile Include="Assets\script\Gameover.js" />
      <Compile Include="Assets\script\Title.js" />
      <Compile Include="Assets\script\chara.js" />
-     <Compile Include="Assets\script\move1.js" />
-     <Compile Include="Assets\script\move2.js" />
+     <Compile Include="Assets\script\goal1.js" />
+     <Compile Include="Assets\script\stage1move1.js" />
+     <Compile Include="Assets\script\stage1move2.js" />
+     <Compile Include="Assets\script\stage2move1.js" />
+     <Compile Include="Assets\script\stage2move2.js" />
      <None Include="Assets\PrimitivePlus\Documentation\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
