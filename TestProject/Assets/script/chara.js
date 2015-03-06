@@ -38,10 +38,6 @@ function FixedUpdate () {
 	}
 
 	posy = 0;
-	if(transform.position.x > 20)
-	{
-		Application.LoadLevel("Stage2");
-	}
 	if(transform.position.y < -15)
 	{
 		Application.LoadLevel("GameOver");	
