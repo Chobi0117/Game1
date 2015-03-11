@@ -50,7 +50,6 @@ function OnCollisionEnter2D(coll: Collision2D) {
 	{
 		Application.LoadLevel("NewTitle");
 	}
- 	Debug.Log("hit Object  COLLISION");
  	
  	if(coll.gameObject.layer == 10)
 	{
