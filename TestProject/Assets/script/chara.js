@@ -40,7 +40,7 @@ function FixedUpdate () {
 	posy = 0;
 	if(transform.position.y < -15)
 	{
-		Application.LoadLevel("Title");	
+		Application.LoadLevel("NewTitle");	
 	}
 }
 
@@ -48,7 +48,7 @@ function FixedUpdate () {
 function OnCollisionEnter2D(coll: Collision2D) {
 	if(coll.gameObject.layer == 9)
 	{
-		Application.LoadLevel("Title");
+		Application.LoadLevel("NewTitle");
 	}
  	Debug.Log("hit Object  COLLISION");
  	
