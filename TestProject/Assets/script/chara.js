@@ -46,7 +46,7 @@ function FixedUpdate () {
 
 
 function OnCollisionEnter2D(coll: Collision2D) {
-	if(coll.gameObject.layer == 9)
+	if(coll.gameObject.layer == 9 || coll.gameObject.layer == 12)
 	{
 		Application.LoadLevel("NewTitle");
 	}

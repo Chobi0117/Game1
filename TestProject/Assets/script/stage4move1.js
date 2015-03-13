@@ -8,7 +8,7 @@ function Start () {
 function Update () {
 	if(bCollition == true)
 	{
-		transform.position.y -= 1;	
+		transform.position.y -= 0.1;	
 	}
 }
 
