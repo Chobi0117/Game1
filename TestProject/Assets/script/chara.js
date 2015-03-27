@@ -19,28 +19,28 @@ function Start () {
 }
 function FixedUpdate () {
 	if(!bDeath){
-		rigidbody2D.velocity.x = 0;
+		GetComponent.<Rigidbody2D>().velocity.x = 0;
 		
 		if(Input.GetKey( KeyCode.RightArrow))
 		{
 			//rigidbody2D.AddForce(Vector2(100,0));
-			rigidbody2D.velocity.x = 5;
+			GetComponent.<Rigidbody2D>().velocity.x = 5;
 		}
 		
 		if(Input.GetKey(KeyCode.LeftArrow))
 		{
 			//rigidbody2D.AddForce(Vector2(-100,0));
-			rigidbody2D.velocity.x = -5;
+			GetComponent.<Rigidbody2D>().velocity.x = -5;
 		}
 		if(JumpCount == 0){
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
-				rigidbody2D.velocity.y = 0;
-				rigidbody2D.AddForce(Vector2(0,1000));
+				GetComponent.<Rigidbody2D>().velocity.y = 0;
+				GetComponent.<Rigidbody2D>().AddForce(Vector2(0,1000));
 				JumpCount = 1;
 				if(JumpSound != null)
 				{
-					gameObject.audio.PlayOneShot(JumpSound);
+					gameObject.GetComponent.<AudioSource>().PlayOneShot(JumpSound);
 				}
 			}
 		}
@@ -50,30 +50,30 @@ function FixedUpdate () {
 		{
 			deathTime = Time.time;	
 			bDeath = true;
-			rigidbody2D.velocity = Vector2.zero;
+			GetComponent.<Rigidbody2D>().velocity = Vector2.zero;
 			if(DeathSound != null)
 			{ 
-				gameObject.audio.PlayOneShot(DeathSound);
+				gameObject.GetComponent.<AudioSource>().PlayOneShot(DeathSound);
 			}
 		}
-	}
-	
-	if(Time.time-deathTime > 0.5f&&bDeath == true){
+	}else{
+		GetComponent.<Rigidbody2D>().velocity = Vector2.zero;
+    } 
+    if(Time.time-deathTime > 0.5f&&bDeath == true){
 		Application.LoadLevel("NewTitle");
 	}
 }
-
-
+	
 function OnCollisionEnter2D(coll: Collision2D) {
 	if(coll.gameObject.layer == 9 || coll.gameObject.layer == 12)
 	{
 		if(DeathSound != null)
 		{
-			gameObject.audio.PlayOneShot(DeathSound);
+			gameObject.GetComponent.<AudioSource>().PlayOneShot(DeathSound);
 		} 
 		bDeath = true;
 		deathTime = Time.time;
-		rigidbody2D.velocity = Vector2.zero;
+		GetComponent.<Rigidbody2D>().velocity = Vector2.zero;
 	}
  	
  	if(coll.gameObject.layer == 10)
