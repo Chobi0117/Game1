@@ -49,7 +49,7 @@ function FixedUpdate () {
 		if(transform.position.y < -15)
 		{
 			deathTime = Time.time;	
-			bDeath = true;
+			bDeath = true; 
 			GetComponent.<Rigidbody2D>().velocity = Vector2.zero;
 			if(DeathSound != null)
 			{ 
@@ -59,7 +59,7 @@ function FixedUpdate () {
 	}else{
 		GetComponent.<Rigidbody2D>().velocity = Vector2.zero;
     } 
-    if(Time.time-deathTime > 0.5f&&bDeath == true){
+    if(Time.time-deathTime > 0.1f&&bDeath == true){
 		Application.LoadLevel("NewTitle");
 	}
 }
