@@ -1,8 +1,14 @@
 fileFormatVersion: 2
 guid: 9cf546f05f30e43b496863a39d73ab12
+timeCreated: 1428066056
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - JumpSound: {fileID: 8300000, guid: 44eb3f753c3214dc1abf0ce319cb81c2, type: 3}
+  - DeathSound: {fileID: 8300000, guid: e6c09b12a329f478b903d9547ce8c90c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
