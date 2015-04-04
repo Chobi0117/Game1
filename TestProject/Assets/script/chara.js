@@ -7,6 +7,9 @@ public var JumpSound : AudioClip;
 public var DeathSound : AudioClip;
 private var deathTime : float;
 private var bDeath : boolean;
+private  var tapx: float;
+public var player : Transform;
+private var right : boolean;
 
 function Start () {
 
@@ -21,17 +24,31 @@ function FixedUpdate () {
 	if(!bDeath){
 		GetComponent.<Rigidbody2D>().velocity.x = 0;
 		
-		if(Input.GetKey( KeyCode.RightArrow))
-		{
-			//rigidbody2D.AddForce(Vector2(100,0));
-			GetComponent.<Rigidbody2D>().velocity.x = 5;
-		}
-		
-		if(Input.GetKey(KeyCode.LeftArrow))
-		{
-			//rigidbody2D.AddForce(Vector2(-100,0));
-			GetComponent.<Rigidbody2D>().velocity.x = -5;
-		}
+//		if(Input.GetKey( KeyCode.RightArrow))
+//		{
+//			//rigidbody2D.AddForce(Vector2(100,0));
+//			GetComponent.<Rigidbody2D>().velocity.x = 5;
+//		}
+//		
+//		if(Input.GetKey(KeyCode.LeftArrow))
+//		{
+//			//rigidbody2D.AddForce(Vector2(-100,0));
+//			GetComponent.<Rigidbody2D>().velocity.x = -5;
+//		}
+	for (var touch : Touch in Input.touches) {
+    	if (touch.phase == TouchPhase.Began) {
+  			tapx = touch.position.x;      
+        }
+   	    if (touch.phase == TouchPhase.Moved||touch.phase == TouchPhase.Stationary) {
+   	    	Debug.Log(touch.position.x);
+    		if(touch.position.x-tapx>1){
+    			GetComponent.<Rigidbody2D>().velocity.x = 5;
+    		}
+    		if(touch.position.x-tapx<1){
+    			GetComponent.<Rigidbody2D>().velocity.x = -5;
+    		}
+    	}
+    }
 		if(JumpCount == 0){
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
